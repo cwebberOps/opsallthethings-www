@@ -1,0 +1,20 @@
+{
+  "name": "opsallthethings",
+  "version": "0.0.0",
+  "authors": [
+    "Christopher Webber <cwebberops@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "source/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation": "~5.5.2",
+    "audiojs": "kolber/audiojs"
+  }
+}

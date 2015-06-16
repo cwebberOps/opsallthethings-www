@@ -1,0 +1,31 @@
+---
+title: Ops All The Things!
+pageable: true
+per_page: 10
+---
+
+<% if paginate && num_pages > 1 %>
+  <p>Page <%= page_number %> of <%= num_pages %></p>
+
+  <% if prev_page %>
+    <p><%= link_to 'Previous page', prev_page %></p>
+  <% end %>
+<% end %>
+
+<% page_articles.each_with_index do |article, i| %>
+<article>
+<h2><%= link_to "#{article.data.number} - #{article.title}", article %></h2>
+<h6>Published: <time><%= article.date.strftime('%b %e %Y') %></time></h6>
+  <%= article.body %>
+<% if article.data.audio_file %>
+<audio src="<%= article.data.audio_file %>" preload="auto" >
+<% end %>
+</article>
+<hr/>
+<% end %>
+
+<% if paginate %>
+  <% if next_page %>
+    <p><%= link_to 'Next page', next_page %></p>
+  <% end %>
+<% end %>
