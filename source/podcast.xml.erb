@@ -24,8 +24,8 @@
     <item>
       <title><![CDATA[<%= "#{article.data.number} - #{article.title}" %>]]></title>
       <description><![CDATA[<%= article.body %>]]></description>
-      <link>https://www.opsallthethings.com/podcast/<%= "#{article.data.number}-#{article.slug}" %></link>
-      <guid>https://www.opsallthethings.com/podcast/<%= "#{article.data.number}-#{article.slug}" %></guid>
+      <link>https://www.opsallthethings.com/podcast/<%= "#{article.data.number}-#{article.slug}/" %></link>
+      <guid>https://www.opsallthethings.com/podcast/<%= "#{article.data.number}-#{article.slug}/" %></guid>
       <pubDate><%= article.date.rfc2822 %></pubDate>
       <itunes:author><![CDATA[Christopher Webber and Steven Murawski]]></itunes:author>
       <itunes:summary><![CDATA[<%= article.body %>]]></itunes:summary>
