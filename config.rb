@@ -85,6 +85,7 @@ activate :blog do |blog|
   blog.permalink = 'podcast/{number}-{title}/index.html'
   blog.sources = 'podcast/{number}.html'
   blog.layout = 'podcast_layout'
+  blog.paginate = true
 end
 
 helpers do
