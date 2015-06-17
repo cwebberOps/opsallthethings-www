@@ -82,7 +82,7 @@ after_configuration do
 end
 
 activate :blog do |blog|
-  blog.permalink = 'podcast/{number}-{title}'
+  blog.permalink = 'podcast/{number}-{title}.html'
   blog.sources = 'podcast/{number}.html'
   blog.layout = 'podcast_layout'
 end
