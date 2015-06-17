@@ -16,10 +16,11 @@ per_page: 10
 <article>
 <h2><%= link_to "#{article.data.number} - #{article.title}", article %></h2>
 <h6>Published: <time><%= article.date.strftime('%b %e %Y') %></time></h6>
-  <%= article.body %>
 <% if article.data.audio_file %>
-<audio src="<%= article.data.audio_file %>" preload="auto" >
+  <div><audio src="<%= article.data.audio_file %>" preload="auto" ></div>
+<h6><%= link_to 'Download File', article.data.audio_file %> | <%= durration(article.data.audio_file) %> | <%= Filesize.from("#{File.size("source/#{article.data.audio_file}")} B").pretty %></h6>
 <% end %>
+  <%= article.body %>
 </article>
 <hr/>
 <% end %>

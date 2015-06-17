@@ -2,7 +2,23 @@
 <article>
 <h2><%= current_page.data.number %> - <%= current_page.data.title %></h2>
 <h6>Published: <time><%= current_page.date.strftime('%b %e %Y') %></time></h6>
-
+<% if current_page.data.audio_file %>
+<div><audio src="<%= current_page.data.audio_file %>" preload="auto" ></div>
+<h6><%= link_to 'Download File', current_page.data.audio_file %> | <%= durration(current_page.data.audio_file) %> | <%= Filesize.from("#{File.size("source/#{current_page.data.audio_file}")} B").pretty %></h6>
+<% end %>
 <%= yield %>
 </article>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'opsallthethings';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 <% end %>

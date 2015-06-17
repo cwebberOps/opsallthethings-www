@@ -15,3 +15,4 @@ gem "tzinfo-data", platforms: [:mswin, :mingw, :jruby]
 
 gem "middleman-blog"
 gem "taglib-ruby"
+gem "filesize"
