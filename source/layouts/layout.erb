@@ -25,10 +25,7 @@
         <div class="large-12 columns">
         <div class="nav-bar right">
         <ul class="button-group">
-        <li><a href="#" class="button">Link 1</a></li>
-        <li><a href="#" class="button">Link 2</a></li>
-        <li><a href="#" class="button">Link 3</a></li>
-        <li><a href="#" class="button">Link 4</a></li>
+        <li><a href="/" class="button">Home</a></li>
         </ul>
         </div>
         <h1>Ops All The Things!</h1>
@@ -43,19 +40,18 @@
         </div>
 
         <aside class="large-3 columns">
-        <h5>Categories</h5>
-        <ul class="side-nav">
-        <li><a href="#">News</a></li>
-        <li><a href="#">Code</a></li>
-        <li><a href="#">Design</a></li>
-        <li><a href="#">Fun</a></li>
-        <li><a href="#">Weasels</a></li>
-        </ul>
         <div class="panel">
-        <h5>Featured</h5>
-        <p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow.</p>
-        <a href="#">Read More &rarr;</a>
+        <h5>Subscribe</h5>
+          <ul class="side-nav">
+            <li><%= link_to 'Direct Link', 'podcast.xml' %></li>
+            <li><%= link_to 'iTunes', 'https://itunes.apple.com/us/podcast/ops-all-the-things!/id724663372' %></li>
+            <li><%= link_to 'Sticher', 'http://www.stitcher.com/s?fid=39594&refid=stpr' %></li>
+          </ul>
         </div>
+        <h5>Sponsored by</h5>
+        <% link_to 'https://www.chef.io' do %>
+          <%= image_tag 'chef_logo.png' %>
+        <% end %>
         </aside>
          
         </div>
@@ -65,14 +61,11 @@
         <hr/>
         <div class="row">
         <div class="large-6 columns">
-        <p>&copy; Copyright no one at all. Go to town.</p>
+        <p>&copy; Ops All The Things!</p>
         </div>
         <div class="large-6 columns">
         <ul class="inline-list right">
-        <li><a href="#">Link 1</a></li>
-        <li><a href="#">Link 2</a></li>
-        <li><a href="#">Link 3</a></li>
-        <li><a href="#">Link 4</a></li>
+          <li><%= link_to 'Home', '/' %></li>
         </ul>
         </div>
         </div>

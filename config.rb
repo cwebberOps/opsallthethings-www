@@ -1,3 +1,5 @@
+require 'taglib'
+
 ###
 # Compass
 ###
@@ -15,7 +17,7 @@ end
 # Per-page layout changes:
 #
 # With no layout
-# page "/path/to/file.html", :layout => false
+page "/podcast.xml", :layout => false
 #
 # With alternative layout
 # page "/path/to/file.html", :layout => :otherlayout
@@ -62,10 +64,10 @@ configure :build do
   activate :minify_css
 
   # Minify Javascript on build
-  activate :minify_javascript
+  #activate :minify_javascript
 
   # Enable cache buster
-  activate :asset_hash
+  #activate :asset_hash
 
   # Use relative URLs
   activate :relative_assets
@@ -83,4 +85,11 @@ activate :blog do |blog|
   blog.permalink = 'podcast/{number}-{title}'
   blog.sources = 'podcast/{number}.html'
   blog.layout = 'podcast_layout'
+end
+
+helpers do
+  def durration(audio_file)
+    mp3 = TagLib::FileRef.new("source#{audio_file}")
+    Time.at(mp3.audio_properties.length).utc.strftime("%M:%S")
+  end
 end
