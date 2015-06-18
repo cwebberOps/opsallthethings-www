@@ -18,7 +18,7 @@ per_page: 5
 <h6><%= link_to "Leave a Reply", "/podcast/#{article.data.number}-#{article.slug}/#disqus_thread" %></h6>
 <h6>Published: <time><%= article.date.strftime('%b %e %Y') %></time></h6>
 <% if article.data.audio_file %>
-  <div><audio src="<%= article.data.audio_file %>" preload="auto" ></div>
+  <div><audio src="<%= article.data.audio_file %>" preload="none" ></div>
 <h6><%= link_to 'Download File', article.data.audio_file %> | <%= durration(article.data.audio_file) %> | <%= Filesize.from("#{File.size("source/#{article.data.audio_file}")} B").pretty %></h6>
 <% end %>
   <%= article.body %>
